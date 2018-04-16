@@ -29,7 +29,7 @@ import java.util.Collections;
 import java.util.HashSet;
 
 import org.neo4j.io.fs.DefaultFileSystemAbstraction;
-import org.neo4j.io.fs.FilePermission;
+import org.neo4j.io.fs.AccessPolicy;
 import org.neo4j.kernel.impl.security.User;
 import org.neo4j.test.rule.TestDirectory;
 
@@ -57,6 +57,6 @@ public class FileRepositorySerializerTest
 
         // Then
         assertEquals( fs.getPermissions( authFile ),
-                new HashSet<>( Arrays.asList( FilePermission.OWNER_READ, FilePermission.OWNER_WRITE ) ) );
+                new HashSet<>( Arrays.asList( AccessPolicy.OWNER_READ, AccessPolicy.OWNER_WRITE ) ) );
     }
 }
